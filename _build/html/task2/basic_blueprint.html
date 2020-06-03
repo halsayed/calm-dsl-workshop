@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 2: Building a basic blueprint</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../_static/js/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Task 1: Preparing your environment" href="../task1/prepare_env.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Calm-dsl Workshop</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../task1/prepare_env.html">Task 1: Preparing your environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../task1/prepare_env.html#install-requirements">Install requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../task1/prepare_env.html#docker">Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../task1/prepare_env.html#running-calm-dsl">Running calm-dsl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../task1/prepare_env.html#initialize-calm-dsl">Initialize calm-dsl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../task1/prepare_env.html#optional-integration-with-vscode">Optional: integration with VSCode</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 2: Building a basic blueprint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-create-blueprint-file">Step 1: Create blueprint file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-define-default-cedentials">Step 2: Define default cedentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-define-vm-resource-object">Step 3: Define VM Resource object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-create-deployment-classes">Step 4: Create deployment classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-define-blueprint-class">Step 5: Define blueprint class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-deploy-blueprint">Step 6: Deploy blueprint</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Calm-dsl Workshop</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../task1/prepare_env.html">Task 1: Preparing your environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 2: Building a basic blueprint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-create-blueprint-file">Step 1: Create blueprint file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-define-default-cedentials">Step 2: Define default cedentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-3-define-vm-resource-object">Step 3: Define VM Resource object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-4-create-deployment-classes">Step 4: Create deployment classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-5-define-blueprint-class">Step 5: Define blueprint class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-6-deploy-blueprint">Step 6: Deploy blueprint</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="task-2-building-a-basic-blueprint">
+<h1>Task 2: Building a basic blueprint<a class="headerlink" href="#task-2-building-a-basic-blueprint" title="Permalink to this headline">¶</a></h1>
+<p>The purpose of this lab is create <strong>LAMP</strong> (Linux Apache MySql PHP) stack using calm-dsl. The following services need to be deployed:
+* <strong>LB Tier:</strong> HAProxy, count 1
+* <strong>Web Tier:</strong> Apahce/PHP, count: ask the user for the number of instance to deploy
+* <strong>DB Tier:</strong> MySQL or MariaDB, count 1, request the user to input database password</p>
+<div class="section" id="step-1-create-blueprint-file">
+<h2>Step 1: Create blueprint file<a class="headerlink" href="#step-1-create-blueprint-file" title="Permalink to this headline">¶</a></h2>
+<p>Using your IDE (suggested Visual Studio Code) create an empty python file. Start importing the required libraries:</p>
+<div class="literal-block-wrapper docutils container" id="initial-lamp-blueprint">
+<div class="code-block-caption"><span class="caption-text">LAMP blueprint</span><a class="headerlink" href="#initial-lamp-blueprint" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">SimpleDeployment</span><span class="p">,</span> <span class="n">SimpleBlueprint</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Save the file in the same folder mapped (project folder) to calm-dsl container created earlier in task 1.</p>
+</div>
+</div>
+<div class="section" id="step-2-define-default-cedentials">
+<h2>Step 2: Define default cedentials<a class="headerlink" href="#step-2-define-default-cedentials" title="Permalink to this headline">¶</a></h2>
+<p>Use a text file under <strong>.local</strong> under the project folder to store the defualt Password.</p>
+<div class="literal-block-wrapper docutils container" id="local-password">
+<div class="code-block-caption"><span class="caption-text">Create local password file</span><a class="headerlink" href="#local-password" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir .local
+$ <span class="nb">echo</span> nutanix/4u &gt; .local/centos
+</pre></div>
+</div>
+</div>
+<p>Import read_local_file and create credentials object.</p>
+<div class="literal-block-wrapper docutils container" id="lamp-blueprint-password">
+<div class="code-block-caption"><span class="caption-text">Initial LAMP blueprint</span><a class="headerlink" href="#lamp-blueprint-password" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">SimpleDeployment</span><span class="p">,</span> <span class="n">SimpleBlueprint</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">read_local_file</span><span class="p">,</span> <span class="n">basic_cred</span>
+</span>
+<span class="hll"><span class="n">CENTOS_PASSWD</span> <span class="o">=</span> <span class="n">read_local_file</span><span class="p">(</span><span class="s1">&#39;centos&#39;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">CENTOS_CRED</span> <span class="o">=</span> <span class="n">basic_cred</span><span class="p">(</span><span class="s1">&#39;centos&#39;</span><span class="p">,</span> <span class="n">CENTOS_PASSWD</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CENTOS_CRED&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-define-vm-resource-object">
+<h2>Step 3: Define VM Resource object<a class="headerlink" href="#step-3-define-vm-resource-object" title="Permalink to this headline">¶</a></h2>
+<p>Assume all the services VM will have the same VM specs (OS, memory, disk and nic).</p>
+<div class="literal-block-wrapper docutils container" id="lamp-blueprint-image-password">
+<div class="code-block-caption"><span class="caption-text">LAMP blueprint</span><a class="headerlink" href="#lamp-blueprint-image-password" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">SimpleDeployment</span><span class="p">,</span> <span class="n">SimpleBlueprint</span>
+<span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">read_local_file</span><span class="p">,</span> <span class="n">basic_cred</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">vm_disk_package</span><span class="p">,</span> <span class="n">AhvVmResources</span><span class="p">,</span> <span class="n">AhvVmDisk</span><span class="p">,</span> <span class="n">AhvVmNic</span><span class="p">,</span> <span class="n">AhvVmGC</span><span class="p">,</span> <span class="n">AhvVm</span>
+</span>
+<span class="n">CENTOS_PASSWD</span> <span class="o">=</span> <span class="n">read_local_file</span><span class="p">(</span><span class="s1">&#39;centos&#39;</span><span class="p">)</span>
+<span class="n">CENTOS_CRED</span> <span class="o">=</span> <span class="n">basic_cred</span><span class="p">(</span><span class="s1">&#39;centos&#39;</span><span class="p">,</span> <span class="n">CENTOS_PASSWD</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;CENTOS_CRED&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="hll"><span class="n">CENTOS_IMAGE_SOURCE</span> <span class="o">=</span> <span class="s1">&#39;https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-ec2-8.1.1911-20200113.3.x86_64.qcow2&#39;</span>
+</span><span class="hll"><span class="n">CentosPackage</span> <span class="o">=</span> <span class="n">vm_disk_package</span><span class="p">(</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;centos_disk&#39;</span><span class="p">,</span>
+</span><span class="hll">                               <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">CENTOS_IMAGE_SOURCE</span><span class="p">}})</span>
+</span><span class="hll">
+</span><span class="hll"><span class="k">class</span> <span class="nc">CentosVmResources</span><span class="p">(</span><span class="n">AhvVmResources</span><span class="p">):</span>
+</span><span class="hll">  <span class="n">memory</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span class="hll">  <span class="n">vCPUs</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class="hll">  <span class="n">cores_per_vCPU</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class="hll">  <span class="n">disks</span> <span class="o">=</span> <span class="p">[</span><span class="n">AhvVmDisk</span><span class="o">.</span><span class="n">Disk</span><span class="o">.</span><span class="n">Scsi</span><span class="o">.</span><span class="n">cloneFromVMDiskPackage</span><span class="p">(</span><span class="n">CentosPackage</span><span class="p">,</span> <span class="n">bootable</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+</span><span class="hll">  <span class="n">nics</span> <span class="o">=</span> <span class="p">[</span><span class="n">AhvVmNic</span><span class="o">.</span><span class="n">DirectNic</span><span class="o">.</span><span class="n">ingress</span><span class="p">(</span><span class="s2">&quot;RX-Automation&quot;</span><span class="p">)]</span>
+</span><span class="hll">  <span class="n">guest_customization</span> <span class="o">=</span> <span class="n">AhvVmGC</span><span class="o">.</span><span class="n">CloudInit</span><span class="p">(</span>
+</span><span class="hll">    <span class="n">config</span><span class="o">=</span><span class="p">{</span>
+</span><span class="hll">        <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">CENTOS_PASSWD</span><span class="p">,</span>
+</span><span class="hll">        <span class="s1">&#39;ssh_pwauth&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span><span class="hll">        <span class="s1">&#39;chpasswd&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="s1">&#39;expire&#39;</span><span class="p">:</span> <span class="kc">False</span> <span class="p">}</span>
+</span><span class="hll">    <span class="p">})</span>
+</span><span class="hll">
+</span><span class="hll"><span class="k">class</span> <span class="nc">CentosVm</span><span class="p">(</span><span class="n">AhvVm</span><span class="p">):</span>
+</span><span class="hll">  <span class="n">resources</span> <span class="o">=</span> <span class="n">CentosVmResources</span>
+</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-create-deployment-classes">
+<h2>Step 4: Create deployment classes<a class="headerlink" href="#step-4-create-deployment-classes" title="Permalink to this headline">¶</a></h2>
+<p>For each service add a class along with the install scripts.</p>
+<p>Scripts can be found on this link: <a class="reference external" href="https://github.com/halsayed/calm-dsl-workshop/tree/master/solution/task2/scripts">https://github.com/halsayed/calm-dsl-workshop/tree/master/solution/task2/scripts</a></p>
+<div class="literal-block-wrapper docutils container" id="lamp-blueprint-services">
+<div class="code-block-caption"><span class="caption-text">LAMP blueprint</span><a class="headerlink" href="#lamp-blueprint-services" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">action</span><span class="p">,</span> <span class="n">CalmTask</span>
+
+<span class="k">class</span> <span class="nc">ApachePHP</span><span class="p">(</span><span class="n">SimpleDeployment</span><span class="p">):</span>
+    <span class="n">provider_spec</span> <span class="o">=</span> <span class="n">CentosVm</span>
+    <span class="n">os_type</span> <span class="o">=</span> <span class="s1">&#39;Linux&#39;</span>
+    <span class="n">min_replicas</span> <span class="o">=</span> <span class="s1">&#39;@@</span><span class="si">{COUNT}</span><span class="s1">@@&#39;</span>
+
+    <span class="nd">@action</span>
+    <span class="k">def</span> <span class="nf">__install__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">CalmTask</span><span class="o">.</span><span class="n">Exec</span><span class="o">.</span><span class="n">ssh</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;install_apache&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;scripts/Apache_install.sh&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">HAProxy</span><span class="p">(</span><span class="n">SimpleDeployment</span><span class="p">):</span>
+    <span class="n">provider_spec</span> <span class="o">=</span> <span class="n">CentosVm</span>
+    <span class="n">os_type</span> <span class="o">=</span> <span class="s1">&#39;Linux&#39;</span>
+
+    <span class="nd">@action</span>
+    <span class="k">def</span> <span class="nf">__install__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">CalmTask</span><span class="o">.</span><span class="n">Exec</span><span class="o">.</span><span class="n">ssh</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;install_haproxy&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;scripts/haproxy_install.sh&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MySQL</span><span class="p">(</span><span class="n">SimpleDeployment</span><span class="p">):</span>
+    <span class="n">provider_spec</span> <span class="o">=</span> <span class="n">CentosVm</span>
+    <span class="n">os_type</span> <span class="o">=</span> <span class="s1">&#39;Linux&#39;</span>
+
+    <span class="nd">@action</span>
+    <span class="k">def</span> <span class="nf">__install__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">CalmTask</span><span class="o">.</span><span class="n">Exec</span><span class="o">.</span><span class="n">ssh</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;install_mysql&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;scripts/mysql_install.sh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The number of apache instances is passed as Calm variable, we will define this in the next step.</p>
+</div>
+</div>
+<div class="section" id="step-5-define-blueprint-class">
+<h2>Step 5: Define blueprint class<a class="headerlink" href="#step-5-define-blueprint-class" title="Permalink to this headline">¶</a></h2>
+<p>In this step, we will link all components to gether.</p>
+<div class="literal-block-wrapper docutils container" id="lamp-blueprint-all">
+<div class="code-block-caption"><span class="caption-text">LAMP blueprint</span><a class="headerlink" href="#lamp-blueprint-all" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">calm.dsl.builtins</span> <span class="kn">import</span> <span class="n">CalmVariable</span>
+
+<span class="k">class</span> <span class="nc">LAMPBlueprint</span><span class="p">(</span><span class="n">SimpleBlueprint</span><span class="p">):</span>
+    <span class="n">credentials</span> <span class="o">=</span> <span class="p">[</span><span class="n">CENTOS_CRED</span><span class="p">]</span>
+    <span class="n">deployments</span> <span class="o">=</span> <span class="p">[</span><span class="n">ApachePHP</span><span class="p">,</span> <span class="n">HAProxy</span><span class="p">,</span> <span class="n">MySQL</span><span class="p">]</span>
+
+    <span class="n">MYSQL_PASSWORD</span> <span class="o">=</span> <span class="n">CalmVariable</span><span class="o">.</span><span class="n">Simple</span><span class="o">.</span><span class="n">Secret</span><span class="p">(</span><span class="s1">&#39;MYSQL_PASSWORD&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;MySQL root password&#39;</span><span class="p">,</span> <span class="n">runtime</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">COUNT</span> <span class="o">=</span> <span class="n">CalmVariable</span><span class="o">.</span><span class="n">WithOptions</span><span class="o">.</span><span class="n">Predefined</span><span class="o">.</span><span class="n">string</span><span class="p">([</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;COUNT&#39;</span><span class="p">,</span>
+                                                        <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Apache Count&#39;</span><span class="p">,</span> <span class="n">runtime</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-6-deploy-blueprint">
+<h2>Step 6: Deploy blueprint<a class="headerlink" href="#step-6-deploy-blueprint" title="Permalink to this headline">¶</a></h2>
+<p>This is the final step, deploy the blueprint to Calm using calm-dsl cli</p>
+<div class="literal-block-wrapper docutils container" id="deploy-blueprint">
+<div class="code-block-caption"><span class="caption-text">Deploy blueprint</span><a class="headerlink" href="#deploy-blueprint" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>calm create bp --filename lamp_blueprint.py --name LAMP-CalmDSL
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can refer to the full python script on this repo:</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/task2/basic_blueprint.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

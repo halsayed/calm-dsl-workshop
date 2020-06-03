@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction to Nutanix Calm-DSL</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/js/jquery-1.11.0.min.js"></script>
+    <script src="_static/js/jquery-fix.js"></script>
+    <script src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Task 1: Preparing your environment" href="task1/prepare_env.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span><img src="_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Calm-dsl Workshop</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="task1/prepare_env.html">Task 1: Preparing your environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="task1/prepare_env.html#install-requirements">Install requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="task1/prepare_env.html#docker">Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="task1/prepare_env.html#running-calm-dsl">Running calm-dsl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="task1/prepare_env.html#initialize-calm-dsl">Initialize calm-dsl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task1/prepare_env.html#optional-integration-with-vscode">Optional: integration with VSCode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="task2/basic_blueprint.html">Task 2: Building a basic blueprint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="task2/basic_blueprint.html#step-1-create-blueprint-file">Step 1: Create blueprint file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task2/basic_blueprint.html#step-2-define-default-cedentials">Step 2: Define default cedentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task2/basic_blueprint.html#step-3-define-vm-resource-object">Step 3: Define VM Resource object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task2/basic_blueprint.html#step-4-create-deployment-classes">Step 4: Create deployment classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task2/basic_blueprint.html#step-5-define-blueprint-class">Step 5: Define blueprint class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="task2/basic_blueprint.html#step-6-deploy-blueprint">Step 6: Deploy blueprint</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Calm-dsl Workshop</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="task1/prepare_env.html">Task 1: Preparing your environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="task2/basic_blueprint.html">Task 2: Building a basic blueprint</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="toctree-wrapper compound" id="calm-dsl">
+</div>
+<div class="section" id="getting-started">
+<span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>This lab is intended to gain hands-on experience based on the topics covered in the calm-dsl introduction workshop.</p>
+<div class="section" id="agenda">
+<h2>Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>What is calm-dsl?</p></li>
+<li><p>Setting up the environment</p></li>
+<li><p>Basic blueprint using CALM-DSL</p></li>
+<li><p>Task: LAMP Blueprint in CALM</p></li>
+<li><p>Advanced topics</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-calm-dsl">
+<h2>What is calm-dsl?<a class="headerlink" href="#what-is-calm-dsl" title="Permalink to this headline">¶</a></h2>
+<p>A domain-specific language <strong>(DSL)</strong> is a computer language specialized to a particular application domain.</p>
+<p><strong>Calm-DSL</strong> describes a simpler Python3 based DSL for writing Calm blueprints. As Calm uses Services, Packages, Substrates, Deployments and Application Profiles as building blocks for a Blueprint, these entities can be defined as python classes. Their attributes can be specified as class attributes and actions on those entities (procedural runbooks) can be defined neatly as class methods. Calm blueprint DSL can also accept appropriate native data formats such as YAML and JSON, allowing the reuse and leveraging that work into the larger application lifecycle context of a Calm blueprint.</p>
+<div class="figure align-default">
+<img alt="_images/what-is-calm-dsl.png" src="_images/what-is-calm-dsl.png" />
+</div>
+</div>
+<div class="section" id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+<p>Before starting this workshop we assume you have the following skills and tools:</p>
+<ul class="simple">
+<li><p><strong>calm:</strong> Good understanding of Calm architecture and building blocks of a blueprint</p></li>
+<li><p><strong>Python3:</strong> Basic knowledge is required. Variables, classes, functions and python syntax</p></li>
+<li><p><strong>Git:</strong> Basic git commands</p></li>
+<li><p><strong>Docker:</strong> Basic knowledge on running an image</p></li>
+<li><p><strong>IDE:</strong> IDE that supports python. Suggested Visual Studio Code with Docker and Python extensions</p></li>
+</ul>
+</div>
+<div class="section" id="initial-setup">
+<h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Take note of the <em>Passwords</em> being used on the HPOC.</p></li>
+</ul>
+</div>
+<div class="section" id="environment-details">
+<h2>Environment Details<a class="headerlink" href="#environment-details" title="Permalink to this headline">¶</a></h2>
+<p>Nutanix Workshops are intended to be run in the Nutanix Hosted POC environment. You will require Prism Central with Calm enabled.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="_sources/index.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

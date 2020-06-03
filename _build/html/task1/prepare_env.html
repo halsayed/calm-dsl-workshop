@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 1: Preparing your environment</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../_static/js/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Task 2: Building a basic blueprint" href="../task2/basic_blueprint.html" />
+    <link rel="prev" title="Getting Started" href="../index.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  </head><body>
+
+  <div id="navbar" class="navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/NutanixWorkshops.svg"></span>
+           </a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html"> <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption"><span class="caption-text">Calm-dsl Workshop</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 1: Preparing your environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-requirements">Install requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker">Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-calm-dsl">Running calm-dsl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initialize-calm-dsl">Initialize calm-dsl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-integration-with-vscode">Optional: integration with VSCode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../task2/basic_blueprint.html">Task 2: Building a basic blueprint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../task2/basic_blueprint.html#step-1-create-blueprint-file">Step 1: Create blueprint file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../task2/basic_blueprint.html#step-2-define-default-cedentials">Step 2: Define default cedentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../task2/basic_blueprint.html#step-3-define-vm-resource-object">Step 3: Define VM Resource object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../task2/basic_blueprint.html#step-4-create-deployment-classes">Step 4: Create deployment classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../task2/basic_blueprint.html#step-5-define-blueprint-class">Step 5: Define blueprint class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../task2/basic_blueprint.html#step-6-deploy-blueprint">Step 6: Deploy blueprint</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><p class="caption"><span class="caption-text">Calm-dsl Workshop</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Task 1: Preparing your environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-requirements">Install requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docker">Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-calm-dsl">Running calm-dsl</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#initialize-calm-dsl">Initialize calm-dsl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-integration-with-vscode">Optional: integration with VSCode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../task2/basic_blueprint.html">Task 2: Building a basic blueprint</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="task-1-preparing-your-environment">
+<h1>Task 1: Preparing your environment<a class="headerlink" href="#task-1-preparing-your-environment" title="Permalink to this headline">¶</a></h1>
+<p>We will first prepare our environment to run calm-dsl. We will run calm-dsl on Docker for this lab.</p>
+<div class="section" id="install-requirements">
+<h2>Install requirements<a class="headerlink" href="#install-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="docker">
+<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<p>Make sure you have Docker running on your laptop. To verify that Docker engine is running, run the following command:</p>
+<div class="literal-block-wrapper docutils container" id="verify-docker">
+<div class="code-block-caption"><span class="caption-text">Check docker version</span><a class="headerlink" href="#verify-docker" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker --version
+</pre></div>
+</div>
+</div>
+<p>If you don’t have Docker installed, please refer to the installation instructions here:
+MacOS:
+Windows:</p>
+</div>
+<div class="section" id="running-calm-dsl">
+<h3>Running calm-dsl<a class="headerlink" href="#running-calm-dsl" title="Permalink to this headline">¶</a></h3>
+<p>calm-dsl image is already available on docker hub <em>ntnx/calm-dsl</em>, pull the image and run the container</p>
+<div class="literal-block-wrapper docutils container" id="pull-image">
+<div class="code-block-caption"><span class="caption-text">Pull calm-dsl image</span><a class="headerlink" href="#pull-image" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker pull ntnx/calm-dsl
+</pre></div>
+</div>
+</div>
+<p>Create a folder to hold you blueprint files for this lab.</p>
+<div class="literal-block-wrapper docutils container" id="run-container">
+<div class="code-block-caption"><span class="caption-text">Run calm-dsl container</span><a class="headerlink" href="#run-container" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir basic_blueprint
+$ <span class="nb">cd</span> basic_blueprint
+$ docker run -it -v <span class="nv">$PWD</span>:/root/blueprint ntnx/calm-dsl
+</pre></div>
+</div>
+</div>
+<p>If everything is ok, you should be presented with container cli.</p>
+</div>
+</div>
+<div class="section" id="initialize-calm-dsl">
+<h2>Initialize calm-dsl<a class="headerlink" href="#initialize-calm-dsl" title="Permalink to this headline">¶</a></h2>
+<p>Run <strong>calm init dsl</strong> on the cli to initialize calm-dsl with the correct settings.</p>
+<div class="figure align-default">
+<img alt="../_images/calm_init_dsl.png" src="../_images/calm_init_dsl.png" />
+</div>
+<p>To validate the settings you can check the status of the PC connecitivty:</p>
+<div class="literal-block-wrapper docutils container" id="check-dsl-status">
+<div class="code-block-caption"><span class="caption-text">Check calm-dsl status</span><a class="headerlink" href="#check-dsl-status" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ calm get server status
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="optional-integration-with-vscode">
+<h2>Optional: integration with VSCode<a class="headerlink" href="#optional-integration-with-vscode" title="Permalink to this headline">¶</a></h2>
+<p>Optionally you can integrate the running container with Visual Studio Code to allow lenting, follow the steps on this blog: <a class="reference external" href="https://www.nutanix.dev/2020/04/24/nutanix-calm-dsl-remote-container-development-part-1/">https://www.nutanix.dev/2020/04/24/nutanix-calm-dsl-remote-container-development-part-1/</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/task1/prepare_env.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018 Nutanix.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

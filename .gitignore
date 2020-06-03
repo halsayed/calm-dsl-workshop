@@ -130,3 +130,6 @@ dmypy.json
 
 # calm-dsl local file store
 .local/
+
+# other ignores
+.DS_Store
